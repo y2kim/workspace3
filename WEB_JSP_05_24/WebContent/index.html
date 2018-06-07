@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="EUC-KR">
+    <title>Insert title here</title>
+    <script>
+    window.onload = function() {
+		document.getElementById("input").onclick = function(){
+			location.href = "input.html";
+		}
+		document.getElementById("output").onclick = function(){
+			location.href = "outputProc.jsp";
+		}
+	}
+    </script>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th colspan="2">Person
+        </tr>
+        <tr>
+            <td><button id="input">input</button></td>
+            <td><button id="output">output</button></td>
+        </tr>
+    </table>
+</body>
+
+</html>

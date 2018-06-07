@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var msg = prompt("단 입력");
+
+        if (msg > 10 || msg < 1) {
+            document.write("숫자를 1~9까지 입력하세요");
+        } else {
+            for (i = 1; i <= 9; i++) {
+                document.write(msg + " * " + i + " = " + msg * i)
+                //            document.write(msg);
+                //            document.write(" * ");
+                //            document.write(i);
+                //            document.write(" = " + msg * i);
+                document.write("<br>");
+            }
+        }
+    </script>
+</body>
+</html>

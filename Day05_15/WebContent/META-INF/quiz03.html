@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="texts"></p>
+    </div>
+    <button id="btn">stop</button>
+    <script>
+        var handle = setInterval(function() {
+            document.getElementById("texts").innerHTML += "|";
+        }, 100); //innerHTML <- 변수 
+        // 함수를 인수값에 넣을수 있음  document.write   로딩이 끝나면 덮어쓰기 로딩되는중이면 이어쓰기
+        // clearInterval(handle);
+        document.getElementById("btn").onclick = function() {
+            clearInterval(handle);
+        }
+    </script>
+</body>
+</html>

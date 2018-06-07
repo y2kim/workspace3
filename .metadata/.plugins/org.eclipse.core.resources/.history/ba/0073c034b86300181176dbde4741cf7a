@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid black;
+        }
+        #wrapper{
+            width: 450px;
+            height: 600px;
+        }
+        .inline{
+            width: 100%;
+            height: 9%;
+        }
+        #col11{
+            width: 100%;
+            height: 10%;
+        }
+        #textInd{
+            height: 100%;
+            width: 35%;
+            float: left;
+            text-align: right;
+            font-size: 18px;
+            padding-top: 9px;
+        }
+        #input{
+            height: 100%;
+            width: 65%;
+            float: left;
+        }
+        #col1{
+            text-align: center;
+            padding-top: 8px;
+            font-size: 24px;
+        }
+        div input{
+            height: 70%;
+            margin-top: 7px;
+            width: 40%;
+        }
+
+        div select{
+            height: 50%;
+            margin-top: 7px;
+            width: 15%;
+        }
+
+        div button{
+            padding-top: -2px;
+            height: 70%;
+            width: 25%;
+        }
+
+        #col11 button{
+            height: 70%;
+            margin-top: 7px;
+            width: 15%;
+        }
+        #okid{
+          width: 40px;
+        }
+        #okname{
+          width: 40px;
+        }
+    </style>
+</head>
+<body>
+  <form action="signup.jsp" method="post" id="forms">
+    <div id="wrapper">
+<!--11줄-->
+    <div id="col1" class="inline" >회원 가입 정보</div>
+    <div id="col2" class="inline">
+        <div id="textInd">아이디:</div>
+        <div id="input"><input type="text" id="inid" name="id"><button id="chk" type="button">중복확인</button><input type="text" readonly id="okid"></div>
+    </div>
+<!--disable  사용하지 말것 나중에 정보 보낼때 안보내-->
+    <div id="col3" class="inline">
+        <div id="textInd">비밀번호:</div>
+        <div id="input"><input type="text" id="inpw" name="pw"></div>
+    </div>
+    <div id="col4" class="inline">
+        <div id="textInd">비밀번호 확인:</div>
+        <div id="input"><input type="text" id="chkpw"> <input type="text" readonly id="bothpw"></div>
+    </div>
+    <div id="col5" class="inline">
+        <div id="textInd">이름:</div>
+        <div id="input"><input type="text" id="name" name="name"><input type="text" readonly id="okname"></div>
+    </div>
+    <div id="col6" class="inline">
+        <div id="textInd">전화번호</div>
+        <div id="input"><select name="phone1" id="fp">
+            <option value="02">02</option>
+        </select>-<input type="text" id="phone1" style="width: 10px; height: 50%" maxlength="4" name="phone2">-
+        <input type="text" id="phone2" style="width: 10px; height: 50%" maxlength="4" name="phone3">
+        </div>
+    </div>
+    <div id="col7" class="inline">
+        <div id="textInd">이메일</div>
+        <div id="input">
+            <input type="text" id="email" name="email">
+        </div>
+    </div>
+    <div id="col8" class="inline">
+        <div id="textInd">우편번호</div>
+        <div id="input">
+            <input type="text" id="sample6_postcode" readonly name="zipcode"> <button onclick="sample6_execDaumPostcode()" type="button">찾기</button>
+        </div>
+    </div>
+    <div id="col9" class="inline">
+        <div id="textInd">주소1</div>
+        <div id="input" >
+            <input type="text" id="sample6_address" readonly name="address1">
+        </div>
+    </div>
+    <div id="col10" class="inline">
+        <div id="textInd">주소2</div>
+        <div id="input">
+            <input type="text"id="sample6_address2" name="address2">
+        </div>
+    </div>
+    <div id="col11" style="text-align: center" >
+        <button type="button" id="sign" style="width: 25%">회원가입</button>
+        <!-- <input type="submit" value="회원가입" id="sign" style="width: 25%" > -->
+        <input type="reset" value="다시 입력" style="width: 25%" height="20px">
+    </div>
+    </div>
+  </form>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<!--CDN-->
+    <script>
+
+    document.getElementById("inid").oninput = function(){
+       var textval = document.getElementById("inid").value;
+       var regex = /^[^a-zA-Z]{0,}.+?[^a-zA-Z0-9]{2,19}/g;
+       if(regex.test(textval)){
+           var change = document.getElementById("inid").value.replace(/^[^a-zA-Z]{0,}.+?[^a-zA-Z0-9]{2,19}/g,"");
+           document.getElementById("inid").value = change;
+           alert("영어와숫자조합 20까지 가능합니다 [첫자는 영어로만]");
+       }
+   }
+    	document.getElementById("chk").onclick = function(){
+            window.open("chkPopId.jsp?id="+document.getElementById("inid").value,"_blank", "width=400,height=300");
+        }
+
+    	document.getElementById("sign").onclick = function(){
+    		var idval = document.getElementById("okid").value;
+    		var pwval = document.getElementById("bothpw").value;
+    		var nameval = document.getElementById("okname").value;
+          	if(idval == 'ok' && pwval == 'match' && nameval == 'name'){
+          		document.getElementById("forms").submit();
+          	}else{
+          		alert("아이디,비밀번호,이름 3가지는 필수로 넣어주세요");
+          	}
+        }
+
+        document.getElementById("chkpw").onkeyup = function(){
+            var valkey1 = document.getElementById("inpw").value;
+            var valkey2 = document.getElementById("chkpw").value;
+             if (valkey1 == valkey2) {
+                document.getElementById("bothpw").value = "match";
+                document.getElementById("bothpw").style.color = "blue";
+            } else {
+                document.getElementById("bothpw").value = "notmatch";
+                document.getElementById("bothpw").style.color = "red";
+            }
+        }
+
+        document.getElementById("name").onkeyup = function(){
+            var valkey1 = document.getElementById("name").value;
+             if (valkey1 == '' && valkey1 == ' ' ) {
+                document.getElementById("okname").value = "noname";
+                document.getElementById("okname").style.color = "red";
+            } else {
+                document.getElementById("okname").value = "name";
+                document.getElementById("okname").style.color = "blue";
+            }
+        }
+
+         document.getElementById("name").oninput = function(){
+            var textval = document.getElementById("name").value;
+            var regex = /[^ㄱ-힣]/;
+            if(regex.test(textval)){
+                var change = document.getElementById("name").value.replace(/[^ㄱ-힣]/g,"");
+                document.getElementById("name").value = change;
+                alert("한글만 집어넣어주세요");
+            }
+        }
+
+        document.getElementById("sample6_address2").onkeyup = function(){
+            var textval = document.getElementById("sample6_address2").value;
+            var regex = /[a-zA-Z]/;
+            if(regex.test(textval)){
+                var change = document.getElementById("sample6_address2").value.replace(/[a-zA-Z]/g,"");
+                document.getElementById("sample6_address2").value = change;
+                alert("영어는 입력불가능합니다");
+            }
+        }
+
+        document.getElementById("phone1").oninput = function(){
+            var textval = document.getElementById("phone1").value;
+            var regex = /[^0-9]/g;
+            var regex2 = /[0-9]{5}/;
+            if(regex.test(textval)){
+                var change = document.getElementById("phone1").value.replace(/[^0-9]/g,"");
+                document.getElementById("phone1").value = change;
+            }
+            if(regex2.test(textval)){
+                var change = document.getElementById("phone1").value.replace(/[0-9]{5}$/,"");
+                document.getElementById("phone1").value = change;
+                alert("4개까지 가능합니다.");
+            }
+        }
+        document.getElementById("phone2").oninput = function(){
+            var textval = document.getElementById("phone2").value;
+            var regex = /[^0-9]/g;
+            var regex2 = /[0-9]{5}/;
+            if(regex.test(textval)){
+                var change = document.getElementById("phone2").value.replace(/[^0-9]/g,"");
+                document.getElementById("phone2").value = change;
+            }
+            if(regex2.test(textval)){
+                var change = document.getElementById("phone2").value.replace(/[0-9]{5}$/,"");
+                document.getElementById("phone2").value = change;
+                alert("4개까지 가능합니다.");
+            }
+        }
+         function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var fullAddr = ''; // 최종 주소 변수
+                var extraAddr = ''; // 조합형 주소 변수
+
+                // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    fullAddr = data.roadAddress;
+
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    fullAddr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+                if(data.userSelectedType === 'R'){
+                    //법정동명이 있을 경우 추가한다.
+                    if(data.bname !== ''){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있을 경우 추가한다.
+                    if(data.buildingName !== ''){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                    fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('sample6_address').value = fullAddr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById('sample6_address2').focus();
+            }
+        }).open();
+
+
+    }
+    </script>
+</body>
+</html>

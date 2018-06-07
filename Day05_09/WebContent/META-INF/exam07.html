@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        ul {
+
+            overflow: hidden;
+            padding: 0;
+            background-color: black;
+        }
+
+        li {
+            float: left;
+            /*float 값을 넣으면  ul 인지 못함 */
+            list-style: none;
+            width: 25%;
+            box-sizing: border-box;
+            /*왼쪽정렬이 되기 때문*/
+            text-align: center;
+            height: 100%;
+            border-left: 1px solid white;
+        }
+
+        li:hover {
+            background-color: gray;
+        }
+
+        li a {
+            padding: 15px 0px;
+            display: block;
+            height: 30px;
+            color: white;
+            text-decoration: none;
+            width: 100%;
+            /*inline 타입이여서*/
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="">HOME</a></li>
+        <li><a href="">PROFILE</a></li>
+        <li><a href="">PORTFOLIO</a></li>
+        <li><a href="">CONTACT</a></li>
+    </ul>
+    <!-- li 자체가 block -->
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		<table border="1">
+			<tr>
+				<th colspan="2"> index page
+			</tr>
+			<tr>
+				<td><button id="toInput">toInput</button></td>
+				<td><button id="toOutput">toOutput</button></td>
+			</tr>
+		</table>
+		
+		<script>
+		</script>
+</body>
+</html>

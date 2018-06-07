@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text1"></div>
+    <script>
+        var text = ">Romio<는 #Julie# 의 창가에서 외쳤다. >window< 를 열어다오 >줄리엣<";
+        var regex = />(.+?)<.+#(.+?)#/gi;
+        regex.exec(text);
+        document.write(RegExp.$1 +" : "+ RegExp.$2);   //0(매칭된 풀 데이터),1배열식 나타남  $9까지 
+        
+    </script>
+</body>
+</html>

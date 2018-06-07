@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #col {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var low = prompt("행");
+        var col = prompt("열");
+        document.write("<table border=1 >");
+        var k = 0;
+        var o = 0;
+        for (i = 1; i <= low; i++) {
+            document.write("<tr>");
+            for (j = 1; j <= col; j++) {
+                k++;
+                if (j % 2 == 0) {
+                    document.write("<td>" + k + "</td>");
+                } else {
+                    document.write("<td id=col>" + k + "</td>");
+                }
+
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+        var color = document.getElementsByTagName("td");
+
+        for (i = 1; i <= low; i++) {
+            for (j = 1; j <= col; j++) {
+                o++;
+                if (j % 2 == 0) {
+                    color[o - 1].style.backgroundColor = "red";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

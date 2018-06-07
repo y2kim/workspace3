@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;kh_web_bean&apos; to &apos;kh_web_beans&apos;&#x0D;&#x0A;- Original project: &apos;WEB_JSP_05_24&apos;&#x0D;&#x0A;- Original element: &apos;WEB_JSP_05_24/src/kh_web_bean&apos;&#x0D;&#x0A;- Renamed element: &apos;WEB_JSP_05_24/src/kh_web_beans&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;kh_web_bean&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;kh_web_bean" name="kh_web_beans" qualified="false" references="true" stamp="1527145274500" textual="false" version="1.0"/>
+</session>

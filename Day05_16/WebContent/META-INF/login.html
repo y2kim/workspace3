@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid black;
+        }
+        #wrapper{
+            width: 350px;
+            height: 200px;
+        }
+        #col1{
+            width: 100%;
+            height: 25%
+        }
+        #col2{
+            width: 100%;
+            height: 25%
+        }
+        #col3{
+            width: 100%;
+            height: 25%
+        }
+        #col4{
+            width: 100%;
+            height: 25%
+        }
+        #indexid{
+            height: 100%;
+            width: 35%;
+            float: left;
+        }
+        #inid{
+            height: 100%;
+            width: 65%;
+            float: left;
+        }
+        #indexpwd{
+            height: 100%;
+            width: 35%;
+            float: left;
+        }
+        #inpwd{
+            height: 100%;
+            width: 65%;
+            float: left;
+        }
+        div button{
+            border-top: 10px;
+        }
+    </style>
+</head>
+<body>
+   <div id="wrapper">
+       <div id="col1" style="text-align: center"><p>회원로그인</p></div>
+       <div id="col2">
+       <div id="indexid">아이디:</div>
+       <div id="inid"><input type="text" id="textid"></div>
+       </div>
+       <div id="col3">
+       <div id="indexpwd">비밀번호 :</div>
+       <div id="inpwd"><input type="text" id="textpwd"></div>
+       </div>
+       <div id="col4" style="text-align: center">
+           <button id="log">로그인</button>
+           <button id="sign">회원가입</button>
+       </div>
+   </div>
+   
+    <script>
+        document.getElementById("sign").onclick = function(){
+            location.href="join.html";
+        }
+    </script>
+</body>
+</html>

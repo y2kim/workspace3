@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 20px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+
+        }
+
+        #rotate {
+            box-shadow: 5px 5px 10px gray;
+            /*음수 방향이면 다른 방향   x y 블러효과 색*/
+            transition-duration: 2s;
+        }
+
+        #rotate:hover {
+            transform: rotate(20deg);
+
+        }
+
+        #skewy:hover {
+            transform: skewX(20deg);
+        }
+
+        #scale:hover {
+            transform: scaleY(1.5);
+        }
+
+        #translate:active {
+            transform: translateX(50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rotate"></div>
+    <div id="skewy"></div>
+    <div id="scale"></div>
+    <div id="translate"></div>
+</body>
+</html>

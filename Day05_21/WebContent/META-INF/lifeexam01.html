@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        #box {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <input type="file"> <button id="add">파일 추가</button> <br>
+    </div>
+
+    <script>
+        $("#add").click(function() {
+            $("#box").append("<input type=\"file\"> <br>");
+        })
+    </script>
+</body>
+</html>

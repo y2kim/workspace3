@@ -1,0 +1,19 @@
+package dbo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class MsgDao {
+	
+	public Connection dbConnect() throws Exception {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		String DB_URL = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
+		String DB_USER = "kh";
+		String DB_PASSWORD = "kh";
+		
+		return  DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+	}
+	
+	
+	
+}

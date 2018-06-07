@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        /* 동의 선택자  */
+
+        h4+h5 {
+            /* +: h4 바로 뒤에 있는 요소  형제 하나만을 선택할때  */
+            color: red;
+        }
+
+        h5+p {
+            /* +: h4 바로 뒤에 있는 요소  형제 하나만을 선택할때  */
+            color: brown;
+        }
+
+        h4~p {
+            /* ~: 해당으로 부터 뒷쪽으로 전부  h4,h5 상관없음 */
+            background-color: azure
+        }
+    </style>
+</head>
+
+<body>
+    <!--동의선택자 : 형제관계-->
+    <div>
+        <h4>자손1</h4>
+        <h5>자손2</h5>
+        <p>자손3</p>
+        <p>자손4</p>
+        <!--여기있는것들은 동의관계-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        window.onload = function() { // 전부 로딩되었을때
+            //        function plus(num1, num2) {
+            //            return num1 + num2;
+            //        }
+            //--element
+            //        var temp = function(num1, num2) { // 익명함수
+            //            return num1 + num2;
+            //        }
+            function call() {
+                alert("call");
+            }
+            var poop = function() {
+                alert("poop");
+            }
+            //() <- 함수 call   ()없으면 주소
+            var popbt = document.getElementById("pop");
+            popbt.onclick = call;
+            //popbt.onclick = fuck();
+            //        popbt.onclick = function() { // 기본형태
+            //            alert("pop!!");
+            //        }
+            function fuck(call) {}
+        }
+        window.onunload = function() {
+
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <input type="button" id="pop" value="pop">
+
+
+</body>
+</html>

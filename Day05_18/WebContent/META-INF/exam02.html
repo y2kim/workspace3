@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--cdn-->
+</head>
+<body>
+    <div id="jquery"></div>
+   <input type="text" value="jquery Hello">
+   
+    <script>
+        $(document).ready(function(){
+         var msg = $("#jquery").text("<b>hello</b> world");//.html() : 태그 까지 딸려 들어옴  text(): 텍스트만 가져옴
+         //alert(msg);
+         $("input").val("Test"); //값 집어 넣을때 no return    
+        
+        }); // = onload  ready <- 함수 
+    </script>
+</body>
+</html>

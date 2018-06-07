@@ -1,0 +1,5 @@
+package kh.web.bean;
+
+public class Car {
+
+}

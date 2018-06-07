@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 50px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            transition-duration: 2s;
+            position: relative;
+            box-shadow: 5px 5px 10px gray;
+        }
+
+        #pic2 {
+            top: -120px;
+            left: 50px;
+        }
+
+        #pic3 {
+            top: -450px;
+            left: 180px;
+            transform: rotate(30deg);
+        }
+
+        div img {
+            width: 200px;
+            height: 200px;
+        }
+
+        #pic1:hover {
+            transform: rotate(30deg);
+        }
+
+        #pic2:hover {
+            transform: skewX(20deg);
+        }
+
+        #pic3:active {
+            transform: scaleY(0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pic1"><img src="corgi6.png"></div>
+    <div id="pic2"><img src="corgi5.jpg"></div>
+    <div id="pic3"><img src="corgi3.jpg"></div>
+</body>
+</html>

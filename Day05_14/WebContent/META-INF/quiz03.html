@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        window.onload = function() { // 하나여야 한다 
+            var mybt = document.getElementById("mouse");
+            mybt.onmouseover = function() { // 콜백함수
+                document.getElementById("mouse").value = "마우스올라옴";
+            }
+            mybt.onmouseout = function() {
+                document.getElementById("mouse").value = "     ";
+            }
+        }
+        // 페이지 끄면 언 로딩 중간에 함수 및 선언이 있으면 안됨
+
+        window.onunload = function() {
+            for (i = 0; i < 5; i++) {
+                var top = Math.floor(Math.random() * 300);
+                var left = Math.floor(Math.random() * 300);
+                open("http://www.naver.com", "_black", "width=300,height=300,top=" + top + ",left=" +
+                    left);
+                //팝업창 //들어갈 url ,어디에 ,
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <input type="button" value="?????" id="mouse">
+
+</body>
+
+</html>

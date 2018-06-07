@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        /*    문자열 속성 선택자    */
+
+        /*(틸드)~: 띄어쓰기로 구분되어지는 문자열 포함 검색*/
+
+        p[name~="Test"] {
+            /*   p[name~="Test"] 순수 독힙적인 Test 문자를 포함 (띄어쓰기관련)  */
+            color: red;
+        }
+
+        /*   pipeline(|) : (하이픈)- 으로 구분되어지면서 시작되는 위치에 있는 문자열 포함을 검색    */
+
+        p[class|="c1"] {
+            /*- 기준으로 나뉘기 때문에 1번째만 잡힌다*/
+            background-color: aquamarine
+        }
+    </style>
+</head>
+
+<body>
+    <p name="Test 1" id="i1" class="c1-class">Test 1 글자</p>
+    <p name="Test2" id="i2" class="class c1">Test 2 글자</p>
+    <p name="3 Test" id="i3" class="c2 class">Test 3 글자</p>
+</body>
+</html>

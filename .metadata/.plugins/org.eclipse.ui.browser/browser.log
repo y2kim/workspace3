@@ -1,0 +1,12 @@
+
+5월 23, 2018 11:22:18.20 NEW SESSION
+5월 23, 2018 11:22:18.20 [1140:3704:0523/112218.198:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 23, 2018 11:23:33.48 [5660:7776:0523/112333.485:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 23, 2018 12:11:20.77 [2392:3904:0523/121120.775:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+5월 23, 2018 13:01:31.45 Unable to read VR Path Registry from C:\Users\user1\AppData\Local\openvr\openvrpaths.vrpath
+5월 23, 2018 13:01:31.45 [2392:5460:0523/130131.448:ERROR:ssl_client_socket_impl.cc(1098)] handshake failed; returned -1, SSL error code 1, net_error -101
+5월 23, 2018 15:30:11.27 [2392:6000:0523/153011.251:ERROR:latency_info.cc(164)] Display::DrawAndSwap, LatencyInfo vector size 102 is too big.
+5월 23, 2018 15:46:44.24 [2392:6000:0523/154644.248:ERROR:latency_info.cc(164)] Display::DrawAndSwap, LatencyInfo vector size 102 is too big.
+5월 23, 2018 15:56:46.68 [2392:6000:0523/155646.684:ERROR:latency_info.cc(164)] Display::DrawAndSwap, LatencyInfo vector size 102 is too big.
+5월 23, 2018 17:09:15.86 [2392:5460:0523/170915.712:ERROR:ssl_client_socket_impl.cc(1098)] handshake failed; returned -1, SSL error code 1, net_error -101
+5월 23, 2018 18:46:08.73 [2392:5460:0523/184608.702:ERROR:ssl_client_socket_impl.cc(1098)] handshake failed; returned -1, SSL error code 1, net_error -100

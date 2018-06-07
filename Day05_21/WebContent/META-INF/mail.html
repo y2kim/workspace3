@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('a.basic').confirmMailto();
+            $('a.advanced').confirmMailto({
+                message: 'Are you cool enough to send an email to $to? ',
+                to: 'html',
+                success: function() {
+                    $('a.advanced').css('color', '#3C3');
+                },
+                fail: function() {
+                    $('a.advanced').css('color', '#F66');
+                },
+                callback: function(result) {
+                    if (result) {
+                        alert('Thank you!');
+                    } else {
+                        alert('Boooo!');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+   
+
+    <div class="demo">
+        Shoot an email to <a href="mailto: advanced@user.io" class="advanced"><b>Advanced</b> User</a>
+    </div>
+</body>
+
+</html>

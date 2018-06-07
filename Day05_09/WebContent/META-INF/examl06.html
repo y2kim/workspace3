@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        div {
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        #wrapper {
+            margin: auto;
+            width: 900px;
+            height: 600px;
+        }
+
+        #header {
+            height: 20%;
+        }
+
+        #logo {
+            width: 18%;
+            height: 100%;
+            float: left;
+            /* float : 띄어놓다,부양 //block 속성이 없어진다*/
+        }
+
+        #search {
+            width: 68%;
+            height: 100%;
+            float: left;
+        }
+
+        #reserved {
+            width: 14%;
+            height: 100%;
+            float: left;
+        }
+
+        #navi {
+            height: 10%;
+            padding: 0;
+            margin: 0;
+        }
+
+        #content {
+            height: 55%;
+        }
+
+        #footer {
+            height: 15%;
+        }
+
+        #content>#con1 {
+            width: 15%;
+            height: 100%;
+            float: left;
+
+        }
+
+        #content>#con2 {
+            width: 60%;
+            height: 100%;
+            float: left;
+
+        }
+
+        #content>#con3 {
+            width: 25%;
+            height: 100%;
+            float: left;
+
+        }
+
+        #loginbanner {
+            width: 100%;
+            height: 30%;
+        }
+
+        #btn {
+            padding: 5% 0px;
+            height: 80%;
+            width: 30%;
+            float: right;
+        }
+
+        #input {
+            width: 70%;
+            height: 80%;
+            float: right;
+        }
+
+        #id {
+            border: 0px solid black;
+            height: 50%;
+            width: 100%;
+            float: left;
+        }
+
+        #pwd {
+            border: 0px solid black;
+            height: 50%;
+            width: 100%;
+            float: left;
+        }
+
+        #inid {
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+        }
+
+        #inpwd {
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+        }
+
+        #btnlogin {
+            text-align: left;
+            width: 60px;
+            height: 100%;
+        }
+
+        #etclogin {
+            font-size: 15 px;
+        }
+
+        #lii {
+            float: left;
+            list-style: none;
+            width: 25%;
+            box-sizing: border-box;
+            border-right: 1px solid black;
+            text-align: center;
+            padding: ;
+            height: 100%;
+        }
+
+        #uli {
+            overflow: hidden;
+            padding: 0;
+            background-color: skyblue;
+            margin-top: 0;
+        }
+
+        #uli a {
+
+            padding: 17px 0px 0px;
+            display: block;
+            height: 40px;
+            width: 100%;
+            color: white;
+            text-decoration: none;
+
+        }
+
+        li:hover {
+            background-color: gray;
+        }
+
+        /*float : 블락을 무시한다*/
+
+        /*%  : 헤더의 크기만큼의 비율*/
+    </style>
+</head>
+
+<body>
+    <!--float-->
+    <div id="wrapper">
+        <div id="header">
+            <div id="logo" align="center">
+                <h3>LOGO</h3>
+            </div>
+            <div id="search" align="center">
+                <h3>TITLE</h3>
+            </div>
+            <div id="reserved" align="center">
+                <h3>SIDE</h3>
+            </div>
+        </div>
+        <div id="navi">
+            <ul id="uli">
+                <li id="lii"><a href="">HOME</a></li>
+                <li id="lii"><a href="">PROFILE</a></li>
+                <li id="lii"><a href="">PORTFOLIO</a></li>
+                <li id="lii"><a href="">CONTACT</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="con1" align="center">
+                <h3>BANNER</h3>
+            </div>
+            <div id="con2" align="center">
+                CONTENTS
+            </div>
+            <div id="con3" align="center">
+                <div id="loginbanner">
+                    <div id="btn">
+                        <input type="button" value="로그인" id="btnlogin">
+                    </div>
+                    <div id="input">
+                        <div id="id"><input type="text" size="15" placeholder="Id을 입력하세요" id="inid">
+                        </div>
+                        <div id="pwd"><input type="text" size="15" placeholder="pw을 입력하세요" id="inpwd">
+                        </div>
+                    </div>
+                    <div id="etclogin" align="center">
+                        <a href="https://www.naver.com/"> 회원가입</a>
+                        <a href="https://www.google.com/">ID/PW 찾기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" align="center">
+            <h3>FOOTER</h3>
+        </div>
+    </div>
+</body>
+</html>

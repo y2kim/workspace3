@@ -1,0 +1,50 @@
+<%@page import="bean.ReplyDAO"%>
+<%@page import="bean.FileDao"%>
+<%@page import="bean.BoradDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+         
+		<%
+		   
+		   String isid = (String)session.getAttribute("loginId");
+		   int num =Integer.parseInt(request.getParameter("list.get(0).getSeq()")) ;
+		   BoradDAO bdao = new BoradDAO();
+		   FileDao fdao = new FileDao();
+		   ReplyDAO rdao = new ReplyDAO();
+		   String chkid = bdao.ischk(num);
+		   if(isid.equals(chkid)){
+		   
+		   int result = bdao.deleteList(num);
+		   
+		   int result2 =  rdao.deleteTotalReply(num); 
+		   
+		   int result3 = fdao.deleteTotalFile(num);
+		   
+		   if(result > 0){%>
+		       <script>
+			   alert("성공적으로 삭제되었습니다");
+			   location.href="../BorderList.jsp";
+			   </script> 
+			   <%}else{%>
+			   <script>
+			   alert("실패하였습니다");
+			   location.href="../BorderList.jsp";
+			   </script>
+			   <%}
+		   }else{
+			   %><script>
+			    alert("작성자가 아니면 접근하실수가 없습니다.");
+			   </script> 
+			   <%
+		   	}
+		   %>
+		  
+</body>
+</html>

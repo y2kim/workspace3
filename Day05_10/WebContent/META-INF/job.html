@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--    <link rel="stylesheet" href="bootstrap.css">-->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <style>
+        #titlen {
+            font-size: 25px;
+            color: orange;
+        }
+
+        .tl {
+            font-size: 19px;
+            margin-left: 13px;
+        }
+
+        #to2 {
+            margin-right: 220px;
+        }
+
+
+        .fuz {
+            background-color: lightblue;
+            transition-duration: 2s;
+        }
+
+        #hci:hover {
+            background-image: src: url(hang.jpg);
+        }
+
+        #colover:hover {
+            background-color: lightblue;
+        }
+
+    </style>
+
+
+    <link href="carousel.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md  fixed-top bg-secondary navbar-dark">
+            <a class="navbar-brand" href="#" id="titlen">CorgiRound</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class=" navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link tl" href="#">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link tl" href="#myCarousel">Link</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link tl dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Disabled</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#mag1">Magagin1</a>
+                            <a class="dropdown-item" href="#mag2">Magagin2</a>
+                            <a class="dropdown-item" href="#mag3">Magagin3</a>
+                            <a class="dropdown-item" href="#mag4">Magagin4</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link tl" href="#" data-toggle="modal" data-target="#myModal">
+                        Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link tl" href="#foot">About</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" src="corgi3.jpg" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption text-left">
+                            <h1>Welcome Dog House!!!!</h1>
+                            <p>It's pet about Dog Internet Shopping So When you Visite far Shop Simply Search hear you Want Product Purches</p>
+                            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/" role="button" data-toggle="tooltip" title="TO THE GLOBER GO WORLD">Sign up</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="second-slide" src="corgi5.jpg" alt="Second slide">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>동영상으로 배우는 개 교육</h1>
+                            <p>애완견을 훈련 시키기 어렵다구요?. 어디서 부터 가르쳐야 하는지 또 개들한테 하면 안되는 행동이 무엇인지를 걱정하지 마십시오. 여기 보듬교육과 함께 협업하여 훈육을 알려드립니다.</p>
+                            <p><a class="btn btn-lg btn-primary" href="https://www.youtube.com/channel/UCee1MvXr6E8qC_d2WEYTU5g" role="button" data-toggle="tooltip" title="배워봅시다!!!!!!">동영상 강의</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="third-slide" src="corgi6.png" alt="Third slide">
+                    <div class="container">
+                        <div class="carousel-caption text-right">
+                            <h1>One more for good measure.</h1>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p><a class="btn btn-lg btn-primary" href="other.html" role="button" data-toggle="tooltip" title="it's null">다른사이</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        </div>
+
+
+        <!-- Marketing messaging and featurettes
+      ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+                <div class="col-lg-4" id="colover">
+                    <img class="rounded-circle" src="bodum.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2>보듬</h2>
+                    <p>저희는 보듬 그룹과 합께 협업을 맺어 애완물품샵을 진행을 하고 있습니다. 보듬의 훈련과 및 물품을 판매를 합니다. 저희 사이트를 이용하신다면 보듬 물품을 좀더 저렴한 가격에 사실수 있습니다. </p>
+                    <p><a class="btn btn-secondary" href="http://www.bodeum.co.kr/html/edu_movie/index.php" role="button" data-toggle="tooltip" title="해당홈페이지로 이동합니다">View details &raquo;</a></p>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4" id="colover">
+                    <img class="rounded-circle" src="bigle.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>훈련</h2>
+                    <p>애완견에 관한 커뮤니티 개설도 되어있습니다. 지식 정보 공유및 분양 ,제품 후기 등등 여러 잡다한 사항을 나눌수 있습니다. (단 불법적인 게시글에 관한 건 형사 처벌이 있습니다)</p>
+                    <p><a class="btn btn-secondary" href="https://www.wwfkorea.or.kr/" role="button" data-toggle="tooltip" title="건전 한지 안한지 모르겠지만 일단 환경단체">View details &raquo;</a></p>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4" id="colover">
+                    <img class="rounded-circle" src="food.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>애완샵</h2>
+                    <p>각종 브렌드, 해외 물품까지 판매를 합니다. 사료부터 시작해서 목줄,방석 등등 물품을 팝니다. </p>
+                    <p><a class="btn btn-secondary" href="https://swindow.naver.com/pet/home" role="button" data-toggle="tooltip" title="네이버 쇼핑몰로 갑니다">View details &raquo;</a></p>
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+
+
+            <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider ui-com3" id="mag1">
+
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#cols1" role="tab">Col1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#cols2" role="tab">Col2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#cols3" role="tab">Col3</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" role="tablist" id="colover">
+                <div id="cols1" class="container tab-pane active"><br>
+                    <h3>HOME</h3>
+                    <p class="col-md-12">코기 라운드는 애완견 샵 이자 커뮤니티 및 훈련 교육기관과 협업을 맺어 멀티사이트 입니다</p>
+                    <div>
+                        <img class="featurette-image img-fluid mx-auto col-md-5" src="sa.jpg" alt="Generic placeholder image" onmouseover="src='hang.jpg'" onmouseout="src='sa.jpg'" width="300px" height="300px">
+                    </div>
+                </div>
+                <div id="cols2" class="container tab-pane fade"><br>
+                    <h3>정보1</h3>
+                    <p class="col-md-6">저희는 메일과 연락처 주소정보로 회원가입을 받습니다. 회원 탈퇴시 자동으로 정보는 삭제가 됩니다. </p>
+                    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo"> image 1</button>
+                    <div id="demo" class="collapse">
+                        <img src="god.jpg">
+                    </div>
+                </div>
+                <div id="cols3" class="container tab-pane fade"><br>
+                    <h3>정보2</h3>
+                    <p class="col-md-6">저희는 원 페이지 이로써 단순 안내 목적입니다 각 버튼을 누르시면 해당 페이지로 갑니다. 차후 페이지 변경될수 있습니다.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo2"> image 2</button>
+                    <div id="demo2" class="collapse">
+                        <img src="sena.jpg">
+                    </div>
+                </div>
+            </div>
+            <!--            -->
+            <hr class="featurette-divider" id="mag2">
+
+            <div class="row featurette" id="colover">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img class="featurette-image img-fluid mx-auto " src="detec.jpg" alt="Generic placeholder image" onmouseover="src='cloth.jpg'" onmouseout="src='detec.jpg'" width="300px" height="300px">
+                </div>
+            </div>
+
+            <hr class="featurette-divider" id="mag3">
+
+            <div class="row featurette" id="colover">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-fluid mx-auto" src="gae.jpg" alt="Generic placeholder image" onmouseover="src='cobang.jpg'" onmouseout="src='gae.jpg'" width="300px" height="300px">
+                </div>
+            </div>
+
+            <hr class="featurette-divider" id="mag4">
+
+            <div class="row featurette" id="colover">
+                <div class="col-md-12">
+                    <video src="sample.mp4" class="col-md-6" controls></video>
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+
+        </div>
+        <!-- /.container -->
+
+
+        <!-- FOOTER -->
+        <footer class="container" id="foot">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#" data-toggle="modal" data-target="#anger">Privacy</a> &middot; <a href="#" data-toggle="tooltip" title="Thanks!js, bootstrap" id="target" data-placement="top">Terms</a></p>
+        </footer>
+    </main>
+
+    <div class="modal" id="anger">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">의견을 보내주세요</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <textarea cols="62" rows="10" placeholder="의견을 보내주세요"></textarea>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-placement="top" data-dismiss="modal" data-toggle="tooltip" title="JS몫">보내기</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">LOGIN</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <p class="modal-title" style="font-size: 20px">아이디를 입력하세요 </p>
+                    <input type="text" placeholder="ID" size="40">
+                    <p class="modal-title" style="font-size: 20px">비밀번호를 입력하세요</p>
+                    <input type="text" placeholder="PW" size="40">
+
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <a href="https://getbootstrap.com/"><input type="button" class="btn btn-danger" value="회원가입" id="to2" ></a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" title="백엔드 영역">로그인</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="jquery-slim.min.js"></script>
+    <script>
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+    </script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="holder.min.js"></script>
+    <script src="popover.js"></script>
+    <script src="tooltip.js"></script>
+    <script src="util.js"></script>
+    <script src="tab.js"></script>
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+
+</body>
+
+</html>

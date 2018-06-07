@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    *{
+    box-sizing: border-box;
+    }
+</style>
+</head>
+<body>
+
+<table id="preset" style="display:none;">
+	<tr name="tr_attach_file">
+		<th>첨부파일</th>
+		<td>
+			<input type="file" name="attachFile" />
+		</td>
+	</tr>
+</table>
+
+<form id="borad" action="addborde.jsp" method="post" enctype="multipart/form-data" name="form1">
+<table border="1">
+   <tr><th colspan="5" width=400>글 작성하기</th></tr>
+   <tr> <td  align="center">제목 :</td> <td colspan="4"><input type="text" id="title" name="title"></td></tr>
+   <tr><td colspan="5"><textarea rows="30" cols="50" style="resize: none;" id="contents" name="contents"></textarea> </td></tr>
+  <!--   <tr id="putfile" name="tr_attach_file"><td>첨부파일 추가하기</td>
+		<td>
+			<button  type="Button" id="addfile" >파일 추가하기</button>
+			<button  type="Button" id="minfile" >파일 삭제하기</button>
+		</td>
+   </tr>-->
+    <tr><td>첨부파일</td>
+		<td>
+			<input type="file" name="file">
+		</td>
+	</tr>
+   <tr ><td colspan="5" style="align-content:center;" align="center" >
+   <button id="done" type="button">작성하기</button>
+   <button id="cancle" type="button">취소</button> 
+   </td></tr>
+</table>
+</form>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script >
+   
+   document.getElementById("done").onclick = function(){
+	   document.getElementById("borad").submit();
+   }
+    document.getElementById("cancle").onclick = function(){
+       location.href="../BorderList.jsp";
+    }
+    
+    files = 0;
+    $("#addfile").click(function(){
+ 	   files++;
+ 	   if(files > 5){
+ 		   alert("5개 이상 추가 하실수 없습니다");
+ 		   
+ 	   }else{
+ 	    $('[name=form1] [name=tr_attach_file]:last').after($('#preset tr').clone);
+ 		   
+ 	   }
+ 	   
+ 	   
+      });	
+
+    
+    $("#minfile").click(function(){
+  	   if(files < 0){
+  		 alert("없앨수 없는 파일이  없습니다.");
+  		   
+  	   }else{
+  		 var objTo = $("#fileid"+files)
+  		  objTo.remove();
+        }
+  	   files--;
+     });
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <button id="btn">Action!</button>
+
+<ul>
+  <li>Coffee</li>
+  <li>Milk</li>
+  <li>Soda</li>
+</ul>
+<script>
+    $(document).ready(function(){
+        $("#btn").click(function(){
+            $("li").each(function(index,item){
+                //var text = ($(item).index).text();
+                 alert($(item).text());
+                // alert($(index).text());
+            })
+        })
+    })
+</script>
+</body>
+</html>

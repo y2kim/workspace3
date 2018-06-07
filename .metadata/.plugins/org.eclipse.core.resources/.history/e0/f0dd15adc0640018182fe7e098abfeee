@@ -1,0 +1,134 @@
+<%@page import="javax.servlet.jsp.tagext.TryCatchFinally"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="bean.BorderInfos"%>
+<%@page import="bean.BoradDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+
+  </style>
+<title>Insert title here</title>
+
+</head>
+<body>
+         <%
+         	   int currentpage = 0;
+         	   try{ 
+               currentpage =Integer.parseInt(request.getParameter("currentPage"));
+         	   }catch(Exception e){
+         		  currentpage=0; 
+         	   }
+         	   
+               if(currentpage == 0){
+            	   currentpage =1;
+               }else{
+            	   currentpage =Integer.parseInt(request.getParameter("currentPage"));
+               }
+         %>
+<table border="1">
+        <tr >
+            <th colspan="5" width=600>자유게시판</th>
+        </tr>
+        <tr height=50>
+            <td width=25>index</td>
+            <td width=40>제목</td>
+            <td width=40>작성자</td>
+            <td width=40>작성일</td>
+            <td width=40>조회</td>
+        </tr>
+        <%     // current page 값 받아와야 함 처음에는 널 이므로 1 로 줘야 함  널이 아니면  값을 받으면 됨 
+               BoradDAO bordb = new BoradDAO(); 
+        	   int totalborde = bordb.allBoard();
+        	   
+               int pageSize = 3;
+               int naviCountPerPage = 5;
+               int pageTotalCount =0;
+               if(totalborde%naviCountPerPage >0) { //0 10d으로 나누어 떨어지지 않음 
+       			pageTotalCount = totalborde / naviCountPerPage +1 ;
+       	     	}else {
+       			pageTotalCount = totalborde / naviCountPerPage;
+       		  }
+                int max = pageSize * currentpage;
+                int min = max - 1 ;
+               
+               if(currentpage < 1) {
+          			currentpage = 1;
+          		}else if(currentpage > pageTotalCount) {
+          			currentpage = pageTotalCount;
+          		}
+               int startNavi = (currentpage-1) / naviCountPerPage * naviCountPerPage +1; /// 네비게이터가 시작하는 값    1- 10  11-20 21-30
+       		   int endNavi = startNavi + naviCountPerPage -1 ; // 네비게이터 끝값 
+       		if(endNavi > pageTotalCount) { // 검증코드
+    			endNavi = pageTotalCount;
+    		}
+               List<BorderInfos> list = bordb.listBordercut(max, min);
+               System.out.print(max);
+               System.out.print(min);
+               System.out.print(list.size());
+               if(list.size()<1){
+        %>
+        <tr>
+            <td colspan="5" height=400 width="400">표시할내용이 없습니다</td>
+        </tr>
+        <% }else{ %>
+        
+              <% for(int i=0;i<list.size();i++){%>
+              
+            	  <tr>
+            	  <td><%=list.get(i).getSeq()%></td>
+            	  <td><a href="borde/list.jsp?list.get(i).getSeq()=<%=list.get(i).getSeq()%>"><%=list.get(i).getTitle()%></a></td><td><%=list.get(i).getWriter()%></td>
+            	  <td><%=list.get(i).getWritedate()%></td><td><%=list.get(i).getViewcount()%></td>
+            	  </tr>
+             <%}%>
+     
+        <% } %>
+        <tr>
+        <%
+        boolean needPrev = true;
+		boolean needNext = true;
+		
+		if(startNavi == 1) {
+			needPrev = false;
+		}
+		if(endNavi == pageTotalCount ) {
+			needNext = false;
+		}
+        %>
+          <td colspan="5" style="align-content:center;" align="center" >
+          <%if(needPrev){%>
+        	     <button id="prev"><</button>
+          <% }%>
+          <%for(int i = startNavi;i<=endNavi;i++){%>
+        	   <a href="BorderList.jsp?currentPage=<%=i%>"><%=i%></a>
+          <% }%>
+            <% if(needNext){%>
+            	    <button id="next">></button>
+             <%}%>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" align="center">
+            <input type="Button" value="작성하기">
+            <input type="Button" value="글쓰기" id="addtext">
+            </td>
+        </tr>
+    </table>
+    
+    <script>
+      document.getElementById("addtext").onclick = function(){
+        location.href="borde/addbordetitle.html";
+       }
+        document.getElementById("next").onclick = function(){
+          location.href="BorderList.jsp?currentPage=<%=currentpage-5%>";
+        }
+        document.getElementById("prev").onclick = function(){
+            location.href="BorderList.jsp?currentPage=<%=currentpage+5%>";
+        }
+    </script>
+</body>
+</html>

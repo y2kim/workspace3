@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--   형태 구조 선택자 (type 기반)-->
+    <style>
+        div p:first-of-type {
+            color: blue;
+        }
+
+        div h4:first-of-type {
+            color: red;
+        }
+
+        div p:last-of-type {
+            background-color: pink;
+        }
+
+        div h4:last-of-type {
+            background-color: pink;
+        }
+
+        div p:nth-of-type(2) {
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <p>테스트1</p>
+        <h4>테스트1</h4>
+        <p>테스트2</p>
+        <h4>테스트2</h4>
+        <p>테스트3</p>
+        <h4> 테스트3</h4>
+        <p>테스트4</p>
+        <h4>테스트4</h4>
+    </div>
+</body>
+</html>

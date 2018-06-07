@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        #box {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    제목: <input type="text" id="title"> <br>
+    <!--    -->
+    내용: <input type="text" id="head"> <br>
+    <!--    -->
+    작성자: <input type="text" id="name"> <br>
+    <button id="add">테이블에 추가</button>
+    <table border="1" id="table">
+        <tr id="header">
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+        </tr>
+
+
+    </table>
+    <script>
+        counter = 0;
+        $("#add").click(function() {
+            $("#add").attr('disabled', true);
+            setTimeout(function() {
+                $("#add").attr('disabled', false);
+            }, 1000);
+
+            counter += 1;
+            var text1 = $("#title").val();
+            var text2 = $("#head").val();
+            var text3 = $("#name").val();
+            var coltext = $("<tr> <td>" + text1 + "</td><td>" + text2 + "</td><td>" + text3 + "</td> </tr>");
+            $("#header").after(coltext.hide().fadeIn(2000));
+            if (counter > 10) {
+                $("table tr:nth-of-type(12)").fadeOut(2000, function() {
+                    $("table tr:nth-of-type(12)").remove();
+                });
+
+                //empty 후손 
+            }
+
+        })
+        //$("#table").fadeIn(2000, function() {
+
+        //$("#header").after(coltext);
+        // })
+
+        //("tr:firstchild")
+
+        //        $("#add").click(function() {
+        //           
+        //        })
+    </script>
+</body>
+</html>

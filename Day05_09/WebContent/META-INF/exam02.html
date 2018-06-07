@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px dotted black;
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+        }
+
+        #d1 {
+            position: relative;
+            background-color: aqua;
+            top: 20px;
+            left: 20px;
+            z-index: 3;
+        }
+
+        #d2 {
+            position: relative;
+            background-color: cornsilk;
+            top: 15px;
+            left: 40px;
+            z-index: 1;
+        }
+
+        #d3 {
+            position: relative;
+            background-color: deeppink;
+            left: 20px;
+            z-index: 2;
+        }
+
+        #wrapper {
+            width: 300px;
+            height: 500px;
+            margin: auto;
+        }
+
+        /*static:normal flow(뚝뚝떨어지는것 처럼), relative:static 기반(static 였을때 자기가 있었을곳 기준) 위치 변경 가능*/
+
+        /*덮어쓰기,우선순위가 생기는데 zindex로 조절할수 있다 */
+    </style>
+</head>
+
+<body>
+    <!--CSS Position-->
+    <!--position : static(defaulte)/relative/absolute/fixed-->
+    <div id="wrapper">
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+    </div>
+</body>
+</html>

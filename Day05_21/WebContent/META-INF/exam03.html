@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        #box {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <button>버튼 입니다.</button>
+    </div>
+    <script>
+        $("#box").before("<b>Before의 위치입니다.</b>");
+        $("#box").after("<b>After 위치입니다.</b>");
+        $("#box").prepend("<p>Prepend의 위치입니다.</p>");
+        $("#box").append("<p>Append 위치입니다.</p>");
+    </script>
+</body>
+</html>

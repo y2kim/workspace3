@@ -1,0 +1,59 @@
+package servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.BoardDAO;
+import dao.FileDAO;
+import dao.ReplyDAO;
+
+
+@WebServlet("*.board")
+public class BoardbucketList extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			int num = Integer.parseInt(request.getParameter("pagenum"));
+			String isid =  (String)request.getSession().getAttribute("id");
+			BoardDAO bdao = new BoardDAO();
+			String hadid = bdao.ischk(num);
+			if(isid.equals(hadid)) {
+
+			}else {
+				bdao.updateVisite(num);
+			}
+
+			String requestURI = request.getRequestURI();
+			String contextPath =request.getContextPath();
+
+			System.out.println("requestURI :" + requestURI);
+			System.out.println("ContextPath :" + contextPath);
+
+			String command= requestURI.substring(contextPath.length());
+			System.out.println("command " + command);
+			boolean isRedirect =true;
+			String dst = null;
+			ReplyDAO rdao = new ReplyDAO();
+			FileDAO fdao = new FileDAO();
+			if(command.equals("/BoardList.board")) {
+				
+			}else if(command.equals("/EachReply.board")){
+				
+			}else if(command.equals("/FileList.board")){
+
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

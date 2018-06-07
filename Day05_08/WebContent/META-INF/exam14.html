@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <!--문자 선택자-->
+
+    <style>
+        p {
+            font-size: 25px;
+        }
+
+        #p1::first-letter {
+            font-size: 50px;
+        }
+
+        #p2::first-line {
+            background-color: brown;
+        }
+
+        #p3::before {
+            content: "이전공간 히오스 ";
+            /*문자열의 이전   */
+        }
+
+        #p4::after {
+            content: " after 공간";
+            /*문자열 다음 공간 */
+        }
+
+        #p4::selection {
+            color: red;
+            /*드래그 하는순간 */
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p1">첫 번째 문자열</p><br>
+    <p id="p2">두 번째 문자열 <br> 여기가 두번째 줄</p>
+    <p id="p3">세 번째 문자열</p><br>
+    <p id="p4">네 번째 문자열</p><br>
+</body>
+</html>

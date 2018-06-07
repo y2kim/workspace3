@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="masonry-docs.css">
+    <style>
+        div {
+            box-sizing: border-box;
+        }
+
+        video {
+            z-index: -10;
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .cover {
+            position: relative;
+            background-color: orangered;
+            opacity: 0.8;
+            width: 100%;
+            height: 100px;
+            top: -160px;
+            color: white;
+        }
+
+
+        .bit {
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            margin-bottom: 5px;
+            border: 0;
+        }
+
+        .masonry {
+            column-count: 4;
+            column-gap: 1em;
+        }
+
+        .item {
+            /* Masonry bricks or child elements */
+            background-color: #eee;
+            display: inline-block;
+            margin: 0 0 1em;
+            width: 100%;
+
+
+        }
+
+        @media only screen and (max-width: 1150px) and (min-width: 801px) {
+            .masonry {
+                column-count: 3;
+            }
+        }
+
+        /* Masonry on small screens */
+
+        @media only screen and (max-width: 800px) and (min-width: 540px) {
+            .masonry {
+                column-count: 2;
+            }
+        }
+
+        @media only screen and (max-width: 539px) and (min-width: 50px) {
+            .masonry {
+                column-count: 1;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <video src="dogwalk.mp4" autoplay muted>
+        </video>
+    </div>
+    <div class="cover">
+        <p> FIXED WEB - the gallery 백그라운드 동영상과 masorny 레이어 이용 </p>
+    </div>
+    <div class="masonry">
+        <div class="item"><img src="imgdog/img1.jpg"></div>
+        <div class="item"><img src="imgdog/img2.jpg"></div>
+        <div class="item"><img src="imgdog/img3.jpg"></div>
+        <div class="item"><img src="imgdog/img4.jpg"></div>
+        <div class="item"><img src="imgdog/img5.jpg"></div>
+        <div class="item"><img src="imgdog/img6.jpg"></div>
+        <div class="item"><img src="imgdog/img7.jpg"></div>
+        <div class="item"><img src="imgdog/img8.jpg"></div>
+        <div class="item"><img src="imgdog/imgif1.gif"></div>
+        <div class="item"><img src="imgdog/img9.jpg"></div>
+        <div class="item"><img src="imgdog/img10.jpg"></div>
+        <div class="item"><img src="imgdog/img11.jpg"></div>
+        <div class="item"><img src="imgdog/img12.jpg"></div>
+        <div class="item"><img src="imgdog/imgif2.gif"></div>
+        <div class="item"><img src="imgdog/img14.jpg"></div>
+
+    </div>
+</body>
+<script src="masonry-docs.min.js"></script>
+
+</html>

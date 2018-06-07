@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        .myStyle{
+            font-size: 24px;
+            border: 1px dotted red;
+        }
+    </style>
+</head>
+<body>
+    <h1>JQuery 의 Element 속성 제어</h1>
+    <p>JQuery_1</p>
+    <p>JQuery_2</p>
+    <p>JQuery_3</p>
+    <button id="act">Action!</button>
+    <button id="un">Undo!</button>
+    <script>
+        $(document).ready(function(){
+            $("#act").click(function(){
+                $("p:nth-of-type(1)").addClass("myStyle");
+                $("p:nth-of-type(2)").attr("class","myStyle");
+            })
+            $("#un").click(function(){
+                $("p:nth-of-type(2)").removeAttr("class");
+            })
+        })
+    </script>
+</body>
+</html>

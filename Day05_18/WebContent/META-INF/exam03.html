@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+   <div>TEST1</div>
+   <div id="a">TEST2</div>
+   <div>TEST3</div>
+   <div id="b">TEST4</div>
+    <script>
+        $(document).ready(function(){
+            //$("div:nth-of-type(2n)").css("background-color","green");
+            $("[id]").css("background-color","gray");
+        })
+    </script>
+</body>
+</html>

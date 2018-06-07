@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        div {
+            border: 1px dotted red;
+            width: 50px;
+            height: 50px;
+            top: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tarket">
+
+    </div>
+    <button id="act">acttion</button>
+    <script>
+        $("#act").click(function() {
+            $("#tarket").animate({
+                //+=  : 현재 위치에서   // 없으면 기존에 있던 바디에서 그만큼에 추가없이
+                left: "+=250px",
+                top: "+=100px",
+                width: "+=20px",
+
+            }, 1000).css("background-color", "red");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //alert(10 + parseInt("20")); // 자바처럼 동작 10 + "20"// parseInt("20") 있음
+        var msg = prompt("당신이 좋아하는 과목은 무엇인가요? \n1.자바 2.jsp 3.C언어");
+
+        if (msg == '1') {
+            document.write("자바");
+        } else if (msg == '2') {
+            document.write("jsp");
+        } else if (msg == '3') {
+            document.write("c언어");
+        } else {
+            document.write("값 인지 못함");
+        }
+    </script>
+</body>
+</html>

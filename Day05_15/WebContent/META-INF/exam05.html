@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [10, true, 3.14, "Hello world"]; //다양한 값이 다 나온다
+        console.log(arr1);
+        var arr2 = [3.14, false, 5, [1, 2, 3] /*2차원 배열*/ , function() {
+            alert("Test");
+        }]; // 함수도 값이다  펑션도 넣을수 있다
+        alert(arr2[4]()); // 주소를 부르는거니 ()  함수 콜 할수 있음
+    </script>
+</body>
+</html>

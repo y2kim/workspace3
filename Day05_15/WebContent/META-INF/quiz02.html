@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        div {
+            border: 1px solid black;
+        }
+
+        #wrapper {
+            margin: auto;
+            width: 400px;
+            height: 200px;
+        }
+
+        #col {
+            width: 100%;
+            height: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="col">패스워드체크</div>
+        <div id="col"><input type="text" id="id"></div>
+        <div id="col"><input type="text" id="pw"></div>
+        <div id="col"><input type="text" id="ans"></div>
+    </div>
+
+    <script>
+        document.getElementById("pw").onkeyup = function() {
+            var gob1 = document.getElementById("id").value;
+            var gob2 = document.getElementById("pw").value;
+            if (gob1 == gob2) {
+                document.getElementById("ans").value = "패스워드가 일치합니다";
+                document.getElementById("ans").style.color = "blue";
+            } else {
+                document.getElementById("ans").value = "패스워드가 불일치합니다";
+                document.getElementById("ans").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+package servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.Infodao;
+
+@WebServlet("*.board")
+public class FrontSearchWriteSuck extends HttpServlet {
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			String requestURI = request.getRequestURI();
+			String contextPath =request.getContextPath();
+			
+			System.out.println("requestURI :" + requestURI);
+			System.out.println("ContextPath :" + contextPath);
+			
+			String command= requestURI.substring(contextPath.length());
+			System.out.println("command " + command);
+			boolean isRedirect =true;
+			String dst = null;
+			
+			
+		}catch (Exception e) {
+			
+		}
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

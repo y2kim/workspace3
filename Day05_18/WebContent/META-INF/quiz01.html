@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+         var str = "<div class='ah_roll PM_CL_realtimeKeyword_rolling_base' aria-hidden='false'><h3 class='blind'>실시간 급상승 검색어</h3><div class='ah_roll_area PM_CL_realtimeKeyword_rolling'><ul class='ah_l'><li class='ah_item'><a href='#' class='ah_a' data-clk='lve.keyword'><span class='ah_r'>1</span><spanclass='ah_k'>윤보미</span></a></li><li class='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>2</span><spanclass='ah_k'>워마드</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>3</span><spanclass='ah_k'>남규리</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>4</span><spanclass='ah_k'>아파트투유</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>5</span><spanclass='ah_k'>싱가포르</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>6</span><spanclass='ah_k'>민유라</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>7</span><spanclass='ah_k'>내일날씨</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>8</span><spanclass='ah_k'>왕종근나이</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>9</span><spanclass='ah_k'>김상희나이</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>10</span><spanclass='ah_k'>서동주</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>11</span><spanclass='ah_k'>김상희</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>12</span><spanclass='ah_k'>최주봉나이</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>13</span><spanclass='ah_k'>왕종근</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>14</span><spanclass='ah_k'>조현민</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>15</span><spanclass='ah_k'>이상벽 나이</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>16</span><spanclass='ah_k'>이상벽</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>17</span><spanclass='ah_k'>최주봉</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>18</span><spanclass='ah_k'>외모지상주의</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>19</span><spanclass='ah_k'>가수김상희나이</span></a></li><liclass='ah_item'><a href='#' class='ah_a' data-lk='lve.keyword'><span class='ah_r'>20</span><spanclass='ah_k'>프로듀스 48</span></a></li></ul></div></div>";
+        
+        var regex = /<span class='ah_r'>(.+?)<\/span>+.?<spanclass='ah_k'>(.+?)<\/span>/g;
+        var result = "";
+        //var msg = "";
+       // var tmp = "";
+         //document.write(msg);
+        while(regex.exec(str)!== null){
+            result += RegExp.$1+" : "+ RegExp.$2 +" <br>";
+        }
+        document.write(result);
+//       regex.exec(str);
+//         document.write(RegExp.$1 +" : "+ RegExp.$2 +" <br>");
+//        regex.exec(str);
+//        document.write(RegExp.$1 +" : "+ RegExp.$2 +" <br>");
+//        regex.exec(str);
+//        document.write(RegExp.$1 +" : "+ RegExp.$2 +" <br>");
+//        regex.exec(str);
+//        document.write(RegExp.$1 +" : "+ RegExp.$2 +" <br>");
+        
+    
+    </script>
+</body>
+</html>

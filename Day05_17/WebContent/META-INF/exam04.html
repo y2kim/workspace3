@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <div></div>
+    <script>
+        var text = ">Romio<는 >Julie< 의 창가에서 외쳤다. >window< 를 열어다오 >줄리엣<"
+        //var regex = /[a-z]+/gi;
+        var regex = /\>(.+?)\</g; 
+        
+        function findAll(text,regex){
+            var result = new Array();
+            while((tmp = regex.exec(text)) != null){
+               // RegExp.$1 // readonly
+                result.push(RegExp.$1);
+            } 
+            return result;
+        }
+        
+       
+        var result =findAll(text,regex);
+        alert(result);
+        
+    </script>
+</body>
+</html>

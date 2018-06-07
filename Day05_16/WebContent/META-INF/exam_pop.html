@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<!--oppeed-->
+<body>
+   팝업창 입니다.
+   <button id="close">닫기</button>
+   <button id="action">action</button>
+    <script>
+        document.getElementById("close").onclick = function(){
+            window.close(); // 윈도우에 의해서 열려진것만 닫는다 자신 스스로 닫지는 않는다
+        }
+        document.getElementById("action").onclick = function(){
+            //opener.location.href="http://www.naver.com";//오프너가 바뀐다  // openee를 건드지를 못한다
+            opener.document.getElementById("ctext").value = "oppnee가 쏘는 겁니다";
+        }
+    </script>
+</body>
+</html>

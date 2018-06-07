@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text">aaa</div>
+    <div id="result"></div>
+    
+    <script>
+        var text = document.getElementById("text").innerHTML; 
+        
+        var regex = /aa{2,3}/; 
+      
+        if(regex.test(text)){ 
+            document.getElementById("result").innerHTML = " 패턴매칭성공";
+        }else{
+            document.getElementById("result").innerHTML = " 패턴매칭실패";
+        }
+    </script>
+</body>
+</html>

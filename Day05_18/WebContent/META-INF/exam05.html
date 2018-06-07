@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+   <button>Button1</button>
+   <button>Button2</button>
+   <button>Button3</button>
+   <button>Button4</button>
+    <script>
+        $(document).ready(function(){
+            $("button").each(function(index,item){ //index, 주소값
+                //alert(index+" : "+item);
+                $(item).click(function(){
+                    alert(index);
+                })
+            })
+        })
+    </script>
+</body>
+</html>

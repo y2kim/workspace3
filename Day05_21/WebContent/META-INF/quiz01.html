@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <input type="checkbox" value="1">1번
+    <input type="checkbox" value="2">2번
+    <input type="checkbox" value="3">3번
+    <input type="checkbox" value="4">4번
+    <button id="action">Action1</button>
+    <script>
+        $("#action").click(function() {
+            //            $("input").each(function(index, item) {
+            //                
+            //            })
+            $("input:checked").each(function(index, item) {
+                //alert(index);
+                alert($(item).val() + " 번 선")
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text">cbad</div>
+    <div id="result"></div>
+    
+    <script>
+        var text = document.getElementById("text").innerHTML; 
+        // regular expression  / / <-  정규표현식이 되버린다  
+        var regex = /^[^ab]/; // regex type     []meta캐릭터  검색목적이기 때문에  대소문자 확실히 가림
+        //플래그 ,  iggnor case .= 모든글자 null,undefind 찾아주지는 않음   [^]<- not 의미가 되어버림
+        if(regex.test(text)){  //test boolean return  찾으면 true 못 찾으면 false
+            document.getElementById("result").innerHTML = " 패턴매칭성공";
+        }else{
+            document.getElementById("result").innerHTML = " 패턴매칭실패";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        p {
+            border: 1px dotted red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>JQuery : Effect Practice</p>
+    <button id="show">show</button>
+    <button id="hide">hide</button>
+    <button id="toggle">toggle</button>
+    <script>
+        $("#show").click(function() {
+            $("p").slideDown(1000).slideUp(1000); // 왔다갔다 가능 chain 기법
+        })
+        $("#hide").click(function() {
+            $("p").slideUp(1000).slideDown(1000);
+        })
+
+        $("#toggle").click(function() {
+            $("p").slideToggle(1000, function() {
+                alert("3");
+            });
+        })
+    </script>
+</body>
+
+</html>

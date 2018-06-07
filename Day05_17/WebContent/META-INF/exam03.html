@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text">
+    1. public class MainProgram extends JFrame{ 
+	2.
+    3.	 MainProgram self2 = this;
+	4. private JLabel labelTitle2 = new JLabel("DB Practice");
+    </div>
+    <div id="result"></div>
+    
+    
+    <script>
+        var text = document.getElementById("text").innerHTML; 
+        //var text = "<p>ABCD</p><p>EFGH</p>";
+        
+        var regex = /[0-9]\./g; 
+        //var regex = />.+</; // 수량자에 ?  붙이면 최단매치가 된다 
+        
+        document.getElementById("result").innerHTML = (text.replace(regex, ''));
+        
+//        if(regex.test(text)){ 
+//            document.getElementById("result").innerHTML = " 패턴매칭성공";
+//        }else{
+//            document.getElementById("result").innerHTML = " 패턴매칭실패";
+//        }
+    </script>
+    
+</body>
+</html>

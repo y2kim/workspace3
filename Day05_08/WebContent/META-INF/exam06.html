@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        div li {
+            /* 후손 선택자 : 내 아래 밑에있는 모든것 */
+            color: red;
+        }
+
+        div>h4 {
+            /* 자손도 후손 이다 내 한단계 밑에 있는것들만 */
+            /* > 꺽새를 넣으면 자손선택자가 된다 */
+            color: blue;
+        }
+
+        div>ul>h4 {
+            /*후손도 마찬가지  */
+            color: brown;
+        }
+
+        div ul h4 {
+            background-color: antiquewhite
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--   자손 선택자 후손 선택자-->
+    <!--parent-->
+    <div id="div-test">
+        <!--자손-->
+        <h4>자손1</h4>
+        <h4>자손2</h4>
+        <ul>
+            <h4>Test</h4>
+            <!--후손-->
+            <li>UL 태그의 자손이면서 div 태그의 후손</li>
+            <li>UL 태그의 자손이면서 div 태그의 후손</li>
+        </ul>
+
+        <ul>
+            <h4>후손 2</h4>
+        </ul>
+        <li>
+            <h4>후손 3</h4>
+        </li>
+    </div>
+</body>
+</html>

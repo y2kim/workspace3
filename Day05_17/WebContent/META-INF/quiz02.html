@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="전화번호를 넣어주세요" id="phone">
+    <button id="chk">확인</button>
+    <script>
+        document.getElementById("chk").onclick = function(){
+            var phone = document.getElementById("phone").value;
+            var regex1 = /01[0169]-*[0-9]{3,4}-*[0-9]{4}$/; 
+            
+            if(regex1.test(phone)){ 
+              alert("전화번호가 맞습니다");
+            }else{
+              alert("전화번호가 아닙니다");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+package servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
+
+import dao.BoardDAO;
+
+@WebServlet("/ListBoard")
+public class ListBoard extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+		int num = Integer.parseInt(request.getParameter("pagenum"));
+		String isid =  (String)request.getSession().getAttribute("id");
+		BoardDAO bdao = new BoardDAO();
+		String hadid = bdao.ischk(num);
+		if(isid.equals(hadid)) {
+			bdao.updateVisite(num);
+		}
+		}catch (Exception e) {
+			
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

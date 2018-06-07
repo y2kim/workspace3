@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        div {
+            border: 1px dotted black;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            /* content box: border, padding 값을 width 속성값과 별개로 보는 방식 */
+            /* border-box : border, padding 값을 width 속성값에 포함시키는 방식 */
+        }
+
+        #d1 {
+            padding: 10px 20px 10px 10px;
+            /*시계방향 ↑ → ↓ ←     하나만 쓰면 4개 방향으로 적용   2개 쓰면 위아래  왼쪽오른쪽 3개 쓰면 위 왼쪽오른쪽  아래쪽*/
+        }
+
+        #d2 {
+            margin: 20px auto;
+            /*시계방향 ↑ → ↓ ←     하나만 쓰면 4개 방향으로 적용   2개 쓰면 위아래  왼쪽오른쪽 3개 쓰면 위 왼쪽오른쪽  아래쪽*/
+            /*margin : auto :: 페이지 크기 기준으로 중앙으로 바뀜  위 아래에는 적용되지 않음*/
+        }
+    </style>
+</head>
+
+<body>
+    <!--box model-->
+    <div id="wrapper">
+        <div id="d1">TEST1</div>
+        <div id="d2">TEST2</div>
+        <div id="d3">TEST3</div>
+    </div>
+</body>
+
+</html>

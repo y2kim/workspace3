@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--position absolute-->
+    <!--relative 가 static 이였을때 위치를 기준으로 좌표를 지정한다면
+    absolute는 static이 아닌 포지션을 가진 parent의 0,0 으로부터 좌표를 지정한다 static 무시하고
+    [static 이 아닌 parent를 만날때까지 추척하며] 끝까지 static이 아닌 parent를 만나지 못한다면 body 기준으로 좌표를 지정한다-->
+    <style>
+        div {
+            border: 1px dotted black;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+        }
+
+        #d1 {
+            position: absolute;
+            right: 0px;
+            /*오른쪽으로 XX 만큼 떨어지겠다*/
+            background-color: yellow;
+        }
+
+        #d2 {
+            background-color: darkseagreen;
+        }
+
+        #d3 {
+            position: fixed;
+            /*   fixed : 광고,메뉴 마냥 따라다니는 놈  */
+            background-color: crimson;
+            left: 110px;
+            top: 50px;
+
+        }
+
+        #wrapper {
+            position: absolute;
+            width: 300px;
+            height: 800px;
+        }
+    </style>
+    <!--absolute>(static,relative) 우선순위-->
+</head>
+
+<body>
+    <!--position absolute(기준값으로부터 0,0 기준) normalflow영향을 받지 않음-->
+    <div id="wrapper">
+        <div id="d1">D1</div>
+        <div id="d2">D2</div>
+        <div id="d3">D3</div>
+    </div>
+
+</body>
+</html>

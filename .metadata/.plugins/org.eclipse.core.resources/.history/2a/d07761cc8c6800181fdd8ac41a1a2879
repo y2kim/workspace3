@@ -1,0 +1,46 @@
+package servlet;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
+
+import dao.BoardDAO;
+import dto.BoardDTO;
+
+@WebServlet("/ListBoard")
+public class ListBoard extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+		int num = Integer.parseInt(request.getParameter("pagenum"));
+		String isid =  (String)request.getSession().getAttribute("id");
+		BoardDAO bdao = new BoardDAO();
+		String hadid = bdao.ischk(num);
+		if(isid.equals(hadid)) {
+			
+		}else {
+			bdao.updateVisite(num);
+		}
+		List<BoardDTO> list = bdao.showGetPage(num);
+		String writer = list.get(0).getWriter();
+ 		request.setAttribute("list", list);
+ 		request.setAttribute("writer", writer);	
+		RequestDispatcher rd = request.getRequestDispatcher("boardList.jsp");
+		rd.forward(request, response);
+		}catch (Exception e) {
+			
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

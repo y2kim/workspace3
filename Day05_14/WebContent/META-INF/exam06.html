@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //내부 함수
+        field = 20;
+
+        function func1() {
+            var field = 10;
+            // var 떼면 멤버변수,전역변수 역활을 수행하게 된다
+            // var : 지역변수가 된다
+            alert(this.field);
+        }
+
+        function func2() {
+            alert(field);
+        }
+        func1();
+        //func2();
+    </script>
+</body>
+</html>

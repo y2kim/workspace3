@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="clock"></p>
+    <div id="datediv"></div>
+    <script>
+        //        alert(current.getFullYear() + "/" + (current.getMonth() + 1) + "/" + current.getDate() +
+        //            "/" + current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds());
+        //document.getElementById("clock").innerHTML = current;
+        var dateDiv = document.getElementById("datediv");
+        var handler = setInterval(function() {
+            var current = new Date();
+            document.getElementById("clock").innerHTML = current;
+            dateDiv.innerHTML = new Date();
+        }, 1000);
+    </script>
+</body>
+</html>

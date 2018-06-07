@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        #box {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    제목: <input type="text" id="title"> <br>
+    <!--    -->
+    내용: <input type="text" id="head"> <br>
+    <!--    -->
+    작성자: <input type="text" id="name"> <br>
+    <button id="add">테이블에 추가</button>
+    <table border="1" id="table">
+        <tr id="header">
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <script>
+        $("#add").click(function() {
+            var text1 = $("#title").val();
+            var text2 = $("#head").val();
+            var text3 = $("#name").val();
+            //$("#table").append("<tr> <td>" + text1 + "</td><td>" + text2 + "</td><td>" + text3 + "</td> </tr>");
+            //$  , String, Jquery 로 달라질수 있다   var test = $("<tr> <td>" + text1 + "</td><td>" + text2 + "</td><td>" + text3 + "</td> </tr>" )
+            $("#header").after("<tr> <td>" + text1 + "</td><td>" + text2 + "</td><td>" + text3 + "</td> </tr>");
+            //("tr:firstchild")
+        })
+    </script>
+</body>
+</html>

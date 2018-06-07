@@ -1,0 +1,42 @@
+<%@page import="bean.BorderInfos"%>
+<%@page import="java.util.List"%>
+<%@page import="bean.BoradDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<%
+		
+	    int pages = Integer.parseInt(request.getParameter("pages"));
+		
+		BoradDAO bdao = new BoradDAO();
+
+		String searchText = (String) request.getParameter("text");
+	%>
+	<table border="1">
+		<tr>
+			<th colspan="5" width=600>검색된 게시판</th>
+		</tr>
+		<tr height=50>
+			<td width=25>index</td>
+			<td width=40>제목</td>
+			<td width=40>작성자</td>
+			<td width=40>작성일</td>
+			<td width=40>조회</td>
+		</tr>
+		<%
+		int pageSize = 5;
+        int max = pageSize * pages;
+        int min = max - pageSize ;
+		List<BorderInfos> list = bdao.searchBoardCut(searchText, max, min);
+		
+		%>
+	</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--   기본 속성 선택자 -->
+    <style>
+        p[name="n2"] {
+            /*   p[name] : name property 가지고 있는 객체 포함   */
+            color: orangered;
+        }
+
+        p[myProp] {
+            color: aqua;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <p myProp>내 임의 속성</p>
+    <p name="n1" id="i1" class="c1"> Test1 - 속성 선택자</p>
+    <p name="n2" id="i2" class="c1"> Test2 - 속성 선택자</p>
+    <p myProp="n3" id="i3" class="c1"> Test3 - 속성 선택자</p>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            margin: auto;
+            border: 1px solid black;
+        }
+        #wrapper{
+            width: 350px;
+            height: 250px;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <p style="font-size: 17px; ">아이디를 확인하세요</p>
+    <input type="text" id="wantid"> <button id="sea">아이디 확인</button> <button id="clo">닫기</button>
+    <input type="text" readonly id="result">
+</div>
+    <script>
+        var regex = /^[a-z]{1,}.+?[a-z0-9]{2,11}/;
+    document.getElementById("sea").onclick= function(){
+        var idval = document.getElementById("wantid").value;
+        if(idval==""){
+           alert("ID를 입력하세요");
+           return;
+           }
+        if(regex.test(idval)){
+           if(idval == "abcd"){
+            document.getElementById("result").value= "이미 사용중인 ID 입니다.";
+        }else{
+            document.getElementById("result").value= "사용가능한 ID입니다.";
+            var cho = confirm("사용가능한 ID입니다 \n이 ID를 사용하시겠습니까?");
+            if(cho){
+            opener.document.getElementById("inid").value = idval;
+            close();
+            }else{
+
+            }
+        }
+           }else{
+             alert("아이디는최소 4자~12자 까지 가능하며 영어 소문자와숫자로 들어갈수 있으며 시작은 영어 소문자로 시작하여야 합니다");
+           }
+           
+    }
+
+
+
+    document.getElementById("clo").onclick= function(){
+        close();
+    }
+    </script>
+</body>
+</html>

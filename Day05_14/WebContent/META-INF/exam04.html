@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.getElementById("bt").value = "이후내용";
+        //코드의 실행순서때문에  null값이 반환이 된다
+    </script>
+    <input type="button" id="bt" value="이전내용">
+    <!--순서는  아래순으로 실행된다 순서는 동일하게-->
+</body>
+</html>

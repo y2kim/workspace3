@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        p {
+            border: 1px dotted red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>JQuery : Effect Practice</p>
+    <button id="show">show</button>
+    <button id="hide">hide</button>
+    <button id="toggle">toggle</button>
+    <script>
+        $("#show").click(function() {
+            $("p").fadeIn(1000); // 콜백함수 가능
+        })
+        $("#hide").click(function() {
+            $("p").fadeTo(1000, 0.15);
+        })
+        //        $("#show").click(function() {
+        //            $("p").show(1000, function() {
+        //                alert("2");
+        //            });
+        //        })
+        //        $("#hide").click(function() {
+        //            $("p").hide(1000, function() {
+        //                alert("1");
+        //            });
+        //        })
+        $("#toggle").click(function() {
+            $("p").toggle(1000, function() {
+                alert("3");
+            });
+        })
+    </script>
+</body>
+
+</html>

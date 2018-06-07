@@ -1,0 +1,124 @@
+package bean;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+public class BoradDAO {
+	
+	public Connection dbConnect() throws Exception {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		String DB_URL = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
+		String DB_USER = "kh";
+		String DB_PASSWORD = "kh";
+		
+		return  DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+	}
+	
+	public int insertBorder(BorderInfos bifs) throws Exception {
+		Connection cons = dbConnect();
+		String sql = "insert into board values(bodka.nextval,?,?,?,sysdate,?,?)";
+		PreparedStatement pst = cons.prepareStatement(sql);
+		pst.setString(1,bifs.getTitle());
+		pst.setString(2,bifs.getContents());
+		pst.setString(3,bifs.getWriter());
+		pst.setInt(4,bifs.getViewcount());
+		pst.setString(5,bifs.getIp());
+		int result = pst.executeUpdate();
+		cons.commit();
+		pst.close();
+		cons.close();
+		return result;
+	}
+	
+	public List<BorderInfos> listBorder() throws Exception{
+		List<BorderInfos> list = new ArrayList<>();
+		Connection cons = dbConnect();
+		String sql = "select * from board ORDER BY seq desc";
+		PreparedStatement pst = cons.prepareStatement(sql);
+		ResultSet rs = pst.executeQuery();
+		while(rs.next()) {
+			BorderInfos bifs = new BorderInfos();
+			bifs.setSeq(rs.getInt(1));
+			bifs.setTitle(rs.getString(2));
+			bifs.setContents(rs.getString(3));
+			bifs.setWriter(rs.getString(4));
+			bifs.setWritedate(rs.getDate(5));
+			bifs.setViewcount(rs.getInt(6));
+			bifs.setIp(rs.getString(7));
+			
+			list.add(bifs);
+		}
+		rs.close();
+		pst.close();
+		cons.close();
+		return list;
+	}
+	
+	public List<BorderInfos> showGetPage(int seq) throws Exception{
+		List<BorderInfos> list = new ArrayList<>();
+		Connection cons = dbConnect();
+		String sql = "select * from board where seq = ?";
+		PreparedStatement pst = cons.prepareStatement(sql);
+		pst.setInt(1,seq);
+		ResultSet rs = pst.executeQuery();
+		while (rs.next()) {
+			BorderInfos bifs = new BorderInfos();
+			bifs.setSeq(rs.getInt(1));
+			bifs.setTitle(rs.getString(2));
+			bifs.setContents(rs.getString(3));
+			bifs.setWriter(rs.getString(4));
+			bifs.setWritedate(rs.getDate(5));
+			bifs.setViewcount(rs.getInt(6));
+			bifs.setIp(rs.getString(7));
+			list.add(bifs);
+		}
+		rs.close();
+		pst.close();
+		cons.close();
+		return list;
+	}
+
+	public int updateVisite(int seq) throws Exception {
+		Connection cons = dbConnect();
+		String sql = "update board set viewcount = viewcount+1  where seq = ?";
+		PreparedStatement pst = cons.prepareStatement(sql);
+		pst.setInt(1, seq);
+		int result = pst.executeUpdate();
+		cons.commit();
+		pst.close();
+		cons.close();
+		return result;
+	}
+	
+	public int deleteList(int seq) throws Exception{
+		Connection cons = dbConnect();
+		String sql = "delete from board where seq = ?";
+		PreparedStatement pst = cons.prepareStatement(sql);
+		pst.setInt(1, seq);
+		int result = pst.executeUpdate();
+		cons.commit();
+		pst.close();
+		cons.close();
+		return result;
+	}
+	
+	public int updateBorde(BorderInfos bifs, int seq) throws Exception {
+		Connection cons = dbConnect();
+		String sql = "update board set title = ?, contents = ? , writedate = sysdate, ip = ?  where seq = ?";
+		//update members set ISBLOCKED='y' where id = 'abcd';
+		PreparedStatement pst = cons.prepareStatement(sql);
+		pst.setString(1, bifs.getTitle());
+		pst.setString(2, bifs.getContents());
+		pst.setString(3, bifs.getIp());
+		pst.setInt(4, seq);
+		int result = pst.executeUpdate();
+		cons.commit();
+		pst.close();
+		cons.close();
+		return result;
+	}
+}

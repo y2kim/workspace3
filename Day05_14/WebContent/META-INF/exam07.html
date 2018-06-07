@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function plus(num1, num2) {
+            return num1 + num2;
+        }
+
+        function minus(num1, num2) {
+            return num1 - num2;
+        }
+
+        function func(call) {
+            var result = call(10, 20);
+            return result;
+        }
+
+        var result = func(minus);
+        document.write(result);
+
+        // 함수가 자료형 마치 값처럼 다룸
+    </script>
+</body>
+</html>
