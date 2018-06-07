@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="WEB_MVC1_JSP_05_25" path="/WEB_MVC1_JSP_05_25" reloadable="true" source="org.eclipse.jst.jee.server:WEB_MVC1_JSP_05_25"/><Context docBase="WEB_MVC2_JSP_06_04" path="/WEB_MVC2_JSP_06_04" reloadable="true" source="org.eclipse.jst.jee.server:WEB_MVC2_JSP_06_04"/><Context docBase="Web_Back_End_To_MVC2_05_23" path="/Web_Back_End_To_MVC2_05_23" reloadable="true" source="org.eclipse.jst.jee.server:Web_Back_End_To_MVC2_05_23"/><Context docBase="WEB_MVC2_JSP_06_05_Pratice" path="/WEB_MVC2_JSP_06_05_Pratice" reloadable="true" source="org.eclipse.jst.jee.server:WEB_MVC2_JSP_06_05_Pratice"/></Host>
+      <Context docBase="WEB_MVC1_JSP_05_25" path="/WEB_MVC1_JSP_05_25" reloadable="true" source="org.eclipse.jst.jee.server:WEB_MVC1_JSP_05_25"/><Context docBase="WEB_MVC2_JSP_06_04" path="/WEB_MVC2_JSP_06_04" reloadable="true" source="org.eclipse.jst.jee.server:WEB_MVC2_JSP_06_04"/><Context docBase="Web_Back_End_To_MVC2_05_23" path="/Web_Back_End_To_MVC2_05_23" reloadable="true" source="org.eclipse.jst.jee.server:Web_Back_End_To_MVC2_05_23"/><Context docBase="WEB_MVC2_JSP_06_05_Pratice" path="/WEB_MVC2_JSP_06_05_Pratice" reloadable="true" source="org.eclipse.jst.jee.server:WEB_MVC2_JSP_06_05_Pratice"/><Context docBase="WEB_AJAX" path="/WEB_AJAX" reloadable="true" source="org.eclipse.jst.jee.server:WEB_AJAX"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+		$(document).ready(function() {
+			$("#action").click(function() {
+				var val = $("#text").val();
+				$("#text").val("");
+				$.ajax({
+					url:"ajax01.do",
+					type:"get",
+					data:{value:val}	 
+					success:function(response){
+						console.log("AJAX Request 성공 ");
+						$("#response").text(response);
+					},
+					error:function(){
+						console.log("에러발생!");
+					},
+					complte:function(){
+						console.log("성공이건 실패건 어찌되었든 ajax 종료");
+					}
+				});
+			})
+		})	
+</script>
+
+</head>
+<body>
+
+	<input type="text" id="text">
+	<button id="action">Ajax!</button>
+	<p id="response"></p>
+
+
+</body>
+</html>
