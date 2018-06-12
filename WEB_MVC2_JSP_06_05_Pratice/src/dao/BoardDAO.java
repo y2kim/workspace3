@@ -259,6 +259,7 @@ public class BoardDAO {
 		}
 		pst.close();
 		rs.close();
+		cons.close();
 		return sb.toString();
 	}
 	
@@ -339,6 +340,7 @@ public class BoardDAO {
 		}
 		pst.close();
 		rs.close();
+		cons.close();
 		return sb.toString();
 	}
 	
@@ -356,6 +358,9 @@ public class BoardDAO {
 			cons.close();			
 			return result;
 		}else {
+			rs.close();
+			pst.close();
+			cons.close();
 			return 0;
 		}
     }
@@ -372,6 +377,9 @@ public class BoardDAO {
 			cons.close();			
 			return result;
 		}else {
+			rs.close();
+			pst.close();
+			cons.close();
 			return 0;
 		}
 	}

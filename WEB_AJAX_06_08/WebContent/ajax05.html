@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function() {
+	$("#action").click(function() {
+		var year = $("#year").val();
+		var month = $("#month").val();
+		var day = $("#day").val();
+		var date = year+month+day;
+		$.ajax({
+			url:"ajax05.do",
+			type:"get",
+			data:{date:date},
+			success:function(response){
+				console.log("전달완료");
+				for(var i =0; i< response.length;i++){
+					var day = response[i].MSRDT_DE;
+					var city = response[i].MSRSTE_NM;
+					var air1 = response[i].PM10;
+					var air2 = response[i].PM25;
+					var air3 = response[i].O3;
+					
+					$("#title").after("<tr><td>"+day+"<td>"+city+"<td>"+air1+"<td>"+air2+"<td>"+air3+"</tr>");
+				}
+			},
+			error:function(request,status,error){
+				console.log(request.status+":"+status.responseText+":"+ error);
+			}
+		})
+	})
+})
+</script>
+</head>
+<body>
+	    <button id="action">ajax!</button>
+	    <input id="year" placeholder="4자리연도 넣으세요">
+	    <select id="month">
+	    <option value='01'>01</option>
+         <option value='02'>02</option>
+         <option value='03'>03</option>
+         <option value='04'>04</option>
+         <option value='05'>05</option>
+         <option value='06'>06</option>
+         <option value='07'>07</option>
+         <option value='08'>08</option>
+         <option value='09'>09</option>
+         <option value='10'>10</option>
+         <option value='11'>11</option>
+         <option value='12'>12</option>
+         </select>
+	     <input id="day" placeholder="재주껏 넣으세요">
+		<p id="response"></p>
+		<table border="1">
+		<tr id="title">
+		<th colspan="2">제목</th>
+		</tr>
+		</table>
+</body>
+</html>

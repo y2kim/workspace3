@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function() {
+	$("#action").click(function() {
+		$.ajax({
+			url:"ajax04.do",
+			type:"get",
+			success:function(response){
+				console.log("전달완료");
+				for(var i =0; i< response.length;i++){
+					var title = response[i].title;
+					var originallink = response[i].originallink;
+					var desc = response[i].description;
+					$("#title").after("<tr><td>"+title+"<td>"+desc+"</tr>");
+				}
+			},
+			error:function(request,status,error){
+				console.log(request.status+":"+status.responseText+":"+ error);
+			}
+		})
+	})
+})
+</script>
+</head>
+<body>
+	    <button id="action">ajax!</button>
+		<p id="response"></p>
+		<table border="1">
+		<tr id="title">
+		<th colspan="2"></th>
+		</tr>
+		</table>
+</body>
+</html>

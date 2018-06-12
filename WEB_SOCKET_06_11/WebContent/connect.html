@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>web Socket </title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function() {
+	if("WebSocket" in window){
+		var ws = new WebSocket("ws://localhost:8080/WEB_SOCKET_06_11/websocket");
+		
+		$("#send").click(function () {
+			var textmsg = $("#talk").val();
+			ws.send(textmsg);
+		});
+		
+		
+		ws.onopen = function(){
+			alert("연결되었습니다");
+		};
+		ws.onmessage = function(msg) {
+			var line = msg.data+"\n";
+			$("#chat").val($("#chat").val()+line);
+			
+			//var element = document.getElmentById("chat");
+			//elment.scrollTop = element.scrollHight;
+			//alert("abc");
+		};
+		ws.onclose= function () {
+			
+		};
+		
+	}else{
+		alert("브라우저가 웹 소켓을 지원하지 않습니다.")
+	}
+})
+</script>
+</head>
+<body>
+				<table border="1">
+		<tr>
+			<td><textarea rows="28" cols="15" id="chat" style="resize: none;"></textarea></td>
+		</tr>
+		<tr>
+			<td><input type=text id="talk"><button id="send">send</button></td>
+		</tr>
+		</table>
+		
+</body>
+</html>

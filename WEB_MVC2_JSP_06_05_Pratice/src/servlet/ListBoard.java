@@ -36,6 +36,7 @@ public class ListBoard extends HttpServlet {
 			}   	
 			
 			BoardDAO bdao = new BoardDAO();
+			ReplyDAO rdao = new ReplyDAO();
 			 int totalBoard = bdao.allBoard();
 			 int pageSize = 3;
              int max = pageSize * currentpage;
@@ -53,8 +54,10 @@ public class ListBoard extends HttpServlet {
 		}
 		List<BoardDTO> list = bdao.showGetPage(num);
 		String writer = list.get(0).getWriter();
+		List<ReplyDTO> relist = rdao.showReply(num);
  		request.setAttribute("listBoard", list);
  		request.setAttribute("writer", writer);	
+ 		request.setAttribute("relist", relist);
 		RequestDispatcher rd = request.getRequestDispatcher("Board/listBoard.jsp");
 		rd.forward(request, response);
 		}catch (Exception e) {

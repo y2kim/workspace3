@@ -12,7 +12,7 @@
 				$.ajax({
 					url:"ajax01.do",
 					type:"get",
-					data:{value:val}	 
+					data:{val:val},	 
 					success:function(response){
 						console.log("AJAX Request 성공 ");
 						$("#response").text(response);

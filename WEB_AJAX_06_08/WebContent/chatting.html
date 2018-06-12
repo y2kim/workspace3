@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function() {
+	
+	setInterval(function() {
+		$.ajax({
+			url:"chatting.chat",
+			type:"get",
+			success:function(response){
+				console.log("성공");
+				$("#chat").html(response);
+			},
+			error:function(){
+				console.log("에러발생!");
+			},
+			complte:function(){
+				console.log("성공이건 실패건 어찌되었든 ajax 종료");
+			}
+		});
+	}, 1000);
+	
+	$("#send").click(function() {
+		var talk = $("#talk").val();
+		$("#talk").val("");
+		$.ajax({
+			url:"sendchatting.chat",
+			data:{talk:talk},
+			type:"post"
+		});
+	});
+})
+</script>
+</head>
+<body>
+		<table border="1">
+		<tr>
+			<td><textarea rows="28" cols="15" id="chat" style="resize: none;"></textarea></td>
+		</tr>
+		<tr>
+			<td><input type=text id="talk"><button id="send">send</button></td>
+		</tr>
+		</table>
+</body>
+</html>

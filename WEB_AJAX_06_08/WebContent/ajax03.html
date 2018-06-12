@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function() {
+	$("#action").click(function() {
+		$.ajax({
+			url:"ajax03.do",
+			type:"get",
+			success:function(response){
+				console.log("전달완료");
+				for(var i =0; i< response.length;i++){
+					var id = response[i].id;
+					var name = response[i].name;
+					var contact = response[i].contact;
+					$("#response").text($("#response").text() + id + " : " + name + " : " + contact);
+				}
+			},
+			error:function(request,status,error){
+				console.log(request.status+":"+status.responseText+":"+ error);
+			}
+		})
+	})
+})
+</script>
+</head>
+<body>
+	    <button id="action">ajax!</button>
+		<p id="response"></p>
+</body>
+</html>
