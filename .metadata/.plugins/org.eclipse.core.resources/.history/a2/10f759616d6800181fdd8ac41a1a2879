@@ -1,9 +1,0 @@
-package dbo;
-
-public class MessageInfo {
-	private int message_id;
-	private String name;
-	private Strting message;
-	
-	
-}
