@@ -46,6 +46,9 @@ public class FrontController extends HttpServlet {
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if(command.equals("/cals.do")) {
+			String value = request.getParameter("val");
+			out.println("클라이언트가 AJAX로 보낸 값 :" + value);
 		}
 
 	}
